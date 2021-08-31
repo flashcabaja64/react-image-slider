@@ -3,11 +3,13 @@ import Dots from './Dots';
 
 const ImageSlider = ({ slides }) => {
     const [current, setCurrent] = useState(0);
-
+    
+    //Increments index of current slide. Set index back to zero after last slide
     const nextSlide = () => {
         setCurrent(current === slides.length - 1 ? 0 : current + 1)
     }
 
+    //Decrements index of current slide. Set to last index after going back on first slide
     const prevSlide = () => {
         setCurrent(current === 0 ? slides.length - 1 : current - 1)
     }
@@ -25,7 +27,7 @@ const ImageSlider = ({ slides }) => {
                     </div>
                 )
             })}
-            <Dots slides={slides} current={current}/>
+            <Dots slides={slides} current={current} />
         </section>
     )
 }
