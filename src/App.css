@@ -61,7 +61,7 @@ header {
 .slider_main_nav {
     position: absolute;
     right: 0;
-    bottom: 8em;
+    bottom: 2em;
     left: 0;
     text-align: center;
  }
@@ -97,7 +97,7 @@ header {
     border-radius: 10px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (min-height: 600px) {
     .image {
         width: 80%;
         height: 70%;
