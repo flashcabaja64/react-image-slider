@@ -1,19 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Dots from './Dots';
 
-const ImageSlider = ({ slides }) => {
-    const [current, setCurrent] = useState(0);
-    
-    //Increments index of current slide. Set index back to zero after last slide
-    const nextSlide = () => {
-        setCurrent(current === slides.length - 1 ? 0 : current + 1)
-    }
-
-    //Decrements index of current slide. Set to last index after going back on first slide
-    const prevSlide = () => {
-        setCurrent(current === 0 ? slides.length - 1 : current - 1)
-    }
-
+const ImageSlider = ({ slides, current, toggleModal, prevSlide, nextSlide }) => {
     return (
         <section className="slider">
             <button className="left arrow" onClick={prevSlide}></button>
@@ -22,12 +10,18 @@ const ImageSlider = ({ slides }) => {
                 return (
                     <div className={idx === current ? 'slide active' : 'slide'} key={idx}>
                         {idx === current && (
-                            <img key={img.id} src={img.image} alt={img.alt} className="image" />
+                            <img 
+                                key={img.id} 
+                                src={img.image} 
+                                alt={img.alt} 
+                                className="image" 
+                                onClick={toggleModal}
+                            />
                         )}
                     </div>
                 )
             })}
-            <Dots slides={slides} current={current} />
+            <Dots slides={slides} current={current} />     
         </section>
     )
 }
