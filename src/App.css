@@ -114,14 +114,14 @@ header {
 
 .wrapper {
   width: 60%;
-  height: 60%;
+  height: 30%;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
   background: #fff;
   color: #000;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 15;
+  z-index: 999;
   border-radius: 10px;
   position: relative;
 }
@@ -149,8 +149,8 @@ header {
 
 @media screen and (min-width: 768px) and (min-height: 600px) {
     .image {
-        width: 80%;
-        height: 70%;
+        width: 60%;
+        height: 50%;
     }
 
     .slider_main_nav {
@@ -160,6 +160,11 @@ header {
     .slider_nav {
         width: 1.2rem;
         height: 1.2rem;
+    }
+
+    .wrapper {
+        width: 60%;
+        height: 45%;
     }
 }
 
@@ -176,5 +181,10 @@ header {
     .slider_nav {
         width: 1.3rem;
         height: 1.3rem;
+    }
+
+    .wrapper {
+        width: 60%;
+        height: 60%;
     }
 }
